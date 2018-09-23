@@ -1,13 +1,13 @@
-default: bin/hello
+default: bin/ttt
 
-test: bin/test
-	bin/test
+test: bin/ttt_test
+	bin/ttt_test
 
-bin/hello: build/main.o build/test_for_win.o build/print_field.o
-	gcc -Werror build/main.o build/test_for_win.o build/print_field.o -o bin/hello
+bin/ttt: build/main.o build/test_for_win.o build/print_field.o
+	gcc -Werror build/main.o build/test_for_win.o build/print_field.o -o bin/ttt
 
-bin/test: build/main_test.o build/test_for_win.o
-	gcc -Werror build/main_test.o build/test_for_win.o -o bin/test
+bin/ttt_test: build/main_test.o build/test_for_win.o
+	gcc -Werror build/main_test.o build/test_for_win.o -o bin/ttt_test
 
 build/test_for_win.o: src/test_for_win.c
 	gcc -std=c99 -Werror -c src/test_for_win.c -o build/test_for_win.o
